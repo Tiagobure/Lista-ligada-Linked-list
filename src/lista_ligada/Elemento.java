@@ -3,19 +3,23 @@ package lista_ligada;
 public class Elemento {
 
 	// elemento is node--
-	private String valor;
-	private Elemento proximo;
-	public String getValor() {
-		return valor;
+	private String value;
+	private Elemento next;
+	
+	public Elemento(String newValue) {
+		this.value = newValue;
 	}
-	public void setValor(String valor) {
-		this.valor = valor;
+	public String getValue() {
+		return value;
 	}
-	public Elemento getProximo() {
-		return proximo;
+	public void setValue(String value) {
+		this.value = value;
 	}
-	public void setProximo(Elemento proximo) {
-		this.proximo = proximo;
+	public Elemento getNext() {
+		return next;
+	}
+	public void setNext(Elemento next) {
+		this.next = next;
 	}
 	
 	

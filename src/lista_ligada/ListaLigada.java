@@ -6,6 +6,10 @@ public class ListaLigada {
 	private Elemento last;
 	private int size;
 
+	public ListaLigada() {
+		this.size = 0; // quando criar a lista o tamanho é zero
+	}
+
 	public Elemento getFirst() {
 		return first;
 	}
@@ -29,16 +33,35 @@ public class ListaLigada {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	
+
 	public void toAdd(String newValue) {
-		
+		Elemento newElement = new Elemento(newValue);
+		if (first == null && last == null) {
+			this.first = newElement;
+			this.last = newElement;
+			
+		} else {
+			this.last.setNext(newElement);
+			this.last = newElement;
+
+		}
+		this.size++;
 	}
+
 	public void remove(String newValue) {
-		
+
 	}
 
 	public Elemento get(int position) {
-		return null;
-	} 
-	
+		
+		Elemento current = this.first;
+		for(int i =0;i< position; i++) {
+			if(current.getNext() !=null) {
+				current = current.getNext();
+			}
+			
+		}
+		return current;
+	}
+
 }
