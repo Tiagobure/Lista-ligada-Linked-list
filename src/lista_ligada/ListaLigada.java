@@ -1,28 +1,28 @@
 package lista_ligada;
 
-public class ListaLigada {
+public class ListaLigada<TIPO> {
 
-	private Elemento first;
-	private Elemento last;
+	private Elemento<TIPO> first;
+	private Elemento<TIPO> last;
 	private int size;
 
 	public ListaLigada() {
 		this.size = 0; // quando criar a lista o tamanho é zero
 	}
 
-	public Elemento getFirst() {
+	public Elemento<TIPO> getFirst() {
 		return first;
 	}
 
-	public void setFirst(Elemento first) {
+	public void setFirst(Elemento<TIPO> first) {
 		this.first = first;
 	}
 
-	public Elemento getLast() {
+	public Elemento<TIPO> getLast() {
 		return last;
 	}
 
-	public void setLast(Elemento last) {
+	public void setLast(Elemento<TIPO> last) {
 		this.last = last;
 	}
 
@@ -34,8 +34,8 @@ public class ListaLigada {
 		this.size = size;
 	}
 
-	public void toAdd(String newValue) {
-		Elemento newElement = new Elemento(newValue);
+	public void toAdd(TIPO newValue) {
+		Elemento<TIPO> newElement = new Elemento<TIPO>(newValue);
 		if (first == null && last == null) {
 			this.first = newElement;
 			this.last = newElement;
@@ -48,13 +48,13 @@ public class ListaLigada {
 		this.size++;
 	}
 
-	public void remove(String valueSought) {
-		Elemento previus = null;
-		Elemento current = this.first;
+	public void remove(TIPO valueSought) {
+		Elemento<TIPO> previus = null;
+		Elemento<TIPO> current = this.first;
 
 		for (int i = 0; i < this.getSize(); i++) {
 
-			if (current.getValue().equalsIgnoreCase(valueSought)) {
+			if (current.getValue().equals(valueSought)) {
 				if (this.size == 1) {
 					this.first = null;
 					this.last = null;
@@ -80,9 +80,9 @@ public class ListaLigada {
 
 	}
 
-	public Elemento get(int position) {
+	public Elemento<TIPO> get(int position) {
 
-		Elemento current = this.first;
+		Elemento<TIPO> current = this.first;
 		for (int i = 0; i < position; i++) {
 			if (current.getNext() != null) {
 				current = current.getNext();

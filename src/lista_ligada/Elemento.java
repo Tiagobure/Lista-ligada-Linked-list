@@ -1,24 +1,24 @@
 package lista_ligada;
 
-public class Elemento {
+public class Elemento<TIPO> {
 
 	// elemento is node--
-	private String value;
-	private Elemento next;
+	private TIPO value;
+	private Elemento<TIPO> next;
 	
-	public Elemento(String newValue) {
+	public Elemento(TIPO newValue) {
 		this.value = newValue;
 	}
-	public String getValue() {
+	public TIPO getValue() {
 		return value;
 	}
-	public void setValue(String value) {
+	public void setValue(TIPO value) {
 		this.value = value;
 	}
-	public Elemento getNext() {
+	public Elemento<TIPO> getNext() {
 		return next;
 	}
-	public void setNext(Elemento next) {
+	public void setNext(Elemento<TIPO> next) {
 		this.next = next;
 	}
 	

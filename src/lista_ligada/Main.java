@@ -5,32 +5,29 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ListaLigada list = new ListaLigada();
-		list.toAdd("AC");
-		list.toAdd("BA");
-		list.toAdd("CE");
-		list.toAdd("DF");
+		ListaLigada<Integer> list = new ListaLigada<Integer>();
+		list.toAdd(1);
+		list.toAdd(2);
+		list.toAdd(3);
+		list.toAdd(4);
 		System.out.println("Size: " + list.getSize());
 		System.out.println("first: " + list.getFirst().getValue());
-		System.out.println(list.get(0).getValue());
-		System.out.println(list.get(1).getValue());
-		System.out.println(list.get(2).getValue());
-		System.out.println(list.get(3).getValue());
-
+		System.out.println("Last: "  + list.getLast().getValue());
 		for (int i = 0; i < list.getSize(); i++) {
 			System.out.println(list.get(i).getValue());
 		}
 
-		list.remove("DF");
-		System.out.println("Removed DF");
-		list.toAdd("SP");
-		System.out.println("to add SP");
-		list.remove("BA");
-		list.remove("CE");
-		list.remove("AC");
-		list.remove("SP");
+		list.remove(4);
+		System.out.println("Removed 4");
+		list.toAdd(5);
+		System.out.println("to add 5");
+		list.remove(1);
+		list.remove(2);
+		list.remove(3);
+		list.remove(5);
+		list.toAdd(6);
 
-		System.out.println("Tamanho: " + list.getSize());
+		System.out.println("Size: " + list.getSize());
 		
 		for (int i = 0; i < list.getSize(); i++) {
 			System.out.println(list.get(i).getValue());
