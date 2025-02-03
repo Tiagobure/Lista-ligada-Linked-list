@@ -17,7 +17,24 @@ public class Main {
 		System.out.println(list.get(2).getValue());
 		System.out.println(list.get(3).getValue());
 
+		for (int i = 0; i < list.getSize(); i++) {
+			System.out.println(list.get(i).getValue());
+		}
+
+		list.remove("DF");
+		System.out.println("Removed DF");
+		list.toAdd("SP");
+		System.out.println("to add SP");
+		list.remove("BA");
+		list.remove("CE");
+		list.remove("AC");
+		list.remove("SP");
+
+		System.out.println("Tamanho: " + list.getSize());
 		
+		for (int i = 0; i < list.getSize(); i++) {
+			System.out.println(list.get(i).getValue());
+		}
 
 	}
 
